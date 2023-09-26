@@ -1,0 +1,146 @@
+Maze Runner
+
+Générez votre propre aventure !
+
+Contexte
+
+Alors que vous maîtrisez de mieux en mieux Java, il est temps de relever un nouveau
+défi : la génération de labyrinthes. Vous travaillerez sur un projet terminal, loin des
+interfaces utilisateur graphiques, pour vous concentrer sur les algorithmes et la logique
+de programmation.
+
+Projet
+
+Le projet se décomposera en plusieurs étapes évolutives, ajoutant progressivement de
+la complexité à votre générateur de labyrinthes :
+Contraintes d'architecture (obligatoire) :
+● Utilisez une classe Maze comme modèle de base.
+● Tous les générateurs doivent implémenter l'interface MazeGenerator.
+● Disposez de classes distinctes pour chaque type de génération.
+- Imparfait : SimpleImperfectMazeGenerator
+- Parfait : SimplePerfectMazeGenerator
+- Graphe : GraphBasedMazeGenerator (imparfait et parfait)
+- Génération Optimisé : OptimizedMazeGenerator (imparfait et parfait)
+● La classe principale sera le point d'entrée de votre application.
+● Gestion des erreurs
+
+Validation des entrées :
+● Si la largeur ou la hauteur fournie ne sont pas des nombres valides ou sont hors
+des limites définies (par exemple, une taille minimale de 5x5) Message d'erreur :
+“Erreur : Veuillez fournir une largeur et une hauteur valides supérieurs à 5”.
+● Si les arguments supplémentaires (par exemple, "perfect", "imperfect", "simple",
+"graph", "optimized") sont invalides ou manquants , Message d'erreur :
+“Erreur : Veuillez fournir un type de labyrinthe et une méthode de génération valides.”
+Gestion des exceptions :
+Si une exception est levée lors de la génération du labyrinthe ou lors de l'interprétation
+des arguments :
+Message d'erreur : “Erreur inattendue lors de la génération du labyrinthe. Veuillez
+réessayer.”
+Feedback utilisateur :
+En plus des messages d'erreur, fournissez un guide d'utilisation succinct pour aider
+l'utilisateur à fournir les bonnes entrées. Par exemple, après un message d'erreur,
+ajoutez :
+Utilisation : java -jar MazeRunner.jar [largeur] [hauteur] [perfect/imperfect]
+[simple/graph/optimized]
+Explications sur l’output :
+Votre labyrinthe sera composé de salles, qui seront représentées au format suivant :
+
+#.#
+#..
+###
+Dans cet exemple, la salle est ouverte en haut et à droite.
+
+#.####
+#....#
+######
+Dans cet exemple, deux salles sont reliées.
+
+Imparfait
+
+Écrivez un programme Java qui génère un labyrinthe imparfait simple dans le terminal.
+Le labyrinthe doit être généré aléatoirement avec des dimensions spécifiées.
+Les dimensions (hauteur et largeur) seront fournies en arguments lors de l'exécution du
+script.
+Output :
+#.#############
+#....##.......#
+####.##.#####.#
+####.##.#####.#
+#.##.##....##.#
+#.##.#####.##.#
+#.##.#####.##.#
+#.##..........#
+#.##.########.#
+#.##.########.#
+#.##.......##.#
+#.##.#####.##.#
+#.##.#####.##.#
+#.......##....#
+#############.#
+
+Exemple d'exécution :
+java -jar MazeRunner.jar 10 10 imperfect
+
+Perfect
+
+Améliorez votre générateur pour créer des labyrinthes parfaits sans boucles ni
+passages fermés.
+Le labyrinthe doit être affiché dans le terminal.
+Output :
+#.#############
+#.............#
+#############.#
+#############.#
+#....##.......#
+#.#####.#######
+#.#####.#######
+#.......##....#
+#.###########.#
+#.###########.#
+#.##.......##.#
+#.#####.##.##.#
+#.#####.##.##.#
+#.......##....#
+#############.#
+
+Exemple d'exécution :
+java -jar MazeRunner.jar 10 10 perfect
+
+Vous devez toujours pouvoir générer un labyrinthe imparfait, créez une autre classe
+pour ce type de génération
+
+Génération par graphe
+
+Générez des labyrinthes à l'aide d'une approche basée sur un graphe.
+Exemple d'exécution : java -jar MazeRunner.jar 15 15 perfect graph
+
+Bonus
+
+Optimisation de la génération, créer un algorithme de génération le plus rapide possible,
+rajouter donc une classe OptimizedMazeGenerator qui affichera le temps de génération
+à la fin de l’affichage, mais le temps ne doit pas contenir le temps d’affichage.
+
+Rendu
+
+Le projet est à rendre sur https://github.com/prenom-nom/maze_runner
+Pensez à donner les droits sur le répertoire à deepthoughtlaplateforme !
+
+Compétences visées
+
+● Java
+● Algorithmie
+
+Base de connaissances
+
+● Github
+Le site de github
+● Wiki GIT
+Qu’est-ce que Git ?
+● GIT
+Le site de GIT
+● Algorithme de Prim
+
+● Modélisation mathématique d'un labyrinthe
+● Algorithme de Kruskal
+● Génération labyrinthe Python
+● Liste d’algorithmes de génération

@@ -1,0 +1,24 @@
+# Dossiers de sortie des compilations
+target/
+
+# Dossiers de fichiers générés par IDE
+.idea/
+.vscode/
+
+# Fichiers de compilation Java
+*.class
+
+# Dossiers et fichiers de sauvegarde
+*~
+*.swp
+
+# Fichiers de configuration de projet
+.classpath
+.project
+
+# Fichiers de configuration d'IDE
+.settings/
+*.iml
+
+# Mac OS
+.DS_Store
