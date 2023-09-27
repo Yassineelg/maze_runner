@@ -33,7 +33,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>com.yassineelg.App</mainClass>
+              <mainClass>com.yassineelg.Main</mainClass>
             </manifest>
           </archive>
           <outputDirectory>${project.basedir}</outputDirectory>
