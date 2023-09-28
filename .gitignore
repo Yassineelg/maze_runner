@@ -22,3 +22,6 @@ target/
 
 # Mac OS
 .DS_Store
+
+# Fichiers .jar
+*.jar

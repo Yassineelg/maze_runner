@@ -1,0 +1,9 @@
+package com.yassineelg.generators;
+
+public class GraphBasedMazeGenerator implements MazeGenerator {
+
+    @Override
+    public char[][] generateMaze(char[][] grid) {
+        return grid;
+    }
+}

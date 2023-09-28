@@ -10,7 +10,6 @@ public class Main {
     private static final String ERROR_DIMENSIONS = "Erreur : Veuillez fournir une largeur et une hauteur valides supérieurs à 5";
     private static final String ERROR_INVALID_TYPES = "Erreur : Veuillez fournir un type de labyrinthe et une méthode de génération valides.";
     private static final String ERROR_UNEXPECTED = "Erreur inattendue lors de la génération du labyrinthe. Veuillez réessayer.";
-    private static final String SUCCESS_MESSAGE = "Labyrinthe généré avec succès !";
 
     /**
      * Point d'entrée de l'application.
@@ -47,10 +46,10 @@ public class Main {
         }
 
         try {
-            // Maze maze = new Maze(width, height, mazeType, generationType);
-            // maze.generate();
-            // maze.print();
-            System.out.println(SUCCESS_MESSAGE);
+            Maze maze = new Maze(mazeHeight, mazeWidth, mazeType, generationType);
+
+            maze.generate();
+            maze.print();
         } catch (Exception e) {
             printErrorMessage(ERROR_UNEXPECTED);
         }
@@ -63,7 +62,7 @@ public class Main {
      * @return true si le type de génération est valide, false sinon.
      */
     private static boolean isValidGenerationType(String type) {
-        return type.matches("^(perfect|imperfect|graph|optimized)$");
+        return type.matches("^(perfect|imperfect)$");
     }
 
     /**
@@ -73,7 +72,7 @@ public class Main {
      * @return true si le type de labyrinthe est valide, false sinon.
      */
     private static boolean isValidMazeType(String type) {
-        return type.matches("^(simple|perfect)$");
+        return type.matches("^(simple|graph|optimized)$");
     }
 
     /**
