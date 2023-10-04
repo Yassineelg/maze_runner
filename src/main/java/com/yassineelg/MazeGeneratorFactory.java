@@ -27,7 +27,7 @@ public class MazeGeneratorFactory {
             case "graph":
                 return new GraphBasedMazeGenerator();
             case "optimized":
-                return new OptimizedMazeGenerator();
+                return new OptimizedMazeGenerator(generationType);
             default:
                 break;
         }

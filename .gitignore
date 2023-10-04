@@ -24,4 +24,4 @@ target/
 .DS_Store
 
 # Fichiers .jar
-*.jar
+# *.jar

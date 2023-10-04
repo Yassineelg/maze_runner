@@ -33,9 +33,7 @@ public class Maze {
     private void initializeMaze() {
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
-                // Utilise la méthode isBorder() de la classe MazeUtils pour initialiser la
-                // grille avec des murs et des espaces vides.
-                grid[i][j] = MazeUtils.isBorder(i, j, height, width) ? '#' : '.';
+                grid[i][j] = '#';
             }
         }
         // Ouvre une entrée et une sortie dans le labyrinthe.
@@ -48,7 +46,11 @@ public class Maze {
      */
     public void generate() {
         MazeGenerator generator = MazeGeneratorFactory.createGenerator(mazeType, generationType);
-        generator.generateMaze(grid);
+
+        do {
+            // Génération du labyrinthe
+            generator.generateMaze(grid);
+        } while (!MazeSolver.hasValidExit(grid)); // Valide avec le solveur
     }
 
     /**
